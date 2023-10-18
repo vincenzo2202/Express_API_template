@@ -1,0 +1,114 @@
+1- se crea el archivo package.json y se introducen los valores de creación
+    $ npm init
+
+2- instalamos las dependencias necesarias para ejecutar el proyecto , en este caso estas seis. 
+    $ npm i express typescript ts-node nodemon @types/express @types/node.
+
+3- se crea el archivo .gitignore e introducimos aquellas carpetas o archivos que no queremos que se guarden al crear el repositorio
+    $ .gitignore
+
+4- creamos la carpeta src que va a alojar los archivos ts 
+    /src 
+
+5- Creamos archivo de entrada ts
+    index.ts 
+
+6- creamos el tsconfig.json que controla las restricciones del ts
+    $ tsc --init
+
+7- habilitamos en tsconfig.json el comando outdir y establecemos el nombre de la carpeta donde va a compilar ts, a elegir entre estos dos por convencion.
+    "outDir": "./dir", 
+    "outDir": "./build",   
+
+8- ejecutamos tsc para que compile y así se cree automaticamente la carpeta dir.
+
+9- hacemos el Import  para que traiga la carpeta express  que esta dentro de node_modules con:  
+    import express from "express";
+
+10- declaramos un constante por convecion llamada app y la igualamos a los metodos de express
+    const app = express();
+
+11- Creamos el listener para que arranque el servidor en el puerto 4000
+    - app.listen(4000, ()=>{
+        console.log("Server Running"); 
+    }); 
+
+12- Creamos los comandos script para ejecutar nodemon y compilar en el package.json
+
+    -"build": "tsc",
+    -"dev": "nodemon ./src/index.ts"
+
+ para ejecutarlos en la terminal segun convenga.
+    - npm run build
+    - npm run dev 
+
+13- creacion de los endpoints (protocolos http)
+
+    app.get("/users", (req,res)=>{ 
+        res.send("GET USER")   
+    }); 
+
+    app.put("/users", (req,res)=>{ 
+        res.send("UPDATE USER")   
+    });
+
+    app.post("/users", (req,res)=>{ 
+        res.send("CREATE USER")   
+    });
+
+    app.delete("/users", (req,res)=>{ 
+        res.send("DELETE USER")   
+    });
+
+14- usaremos el thunder de VSC o el postman para ejecutar los endpoints.
+    - damos click a new request para poder almacenar los endpoint una vez comprobados.
+
+    - seleccionamos el tipo de endpoint (get, put, post, delete).
+
+    - escribimos la url relativa (localhost:4000/users)
+
+    - utilizando send comprobamos lo que nos devuelve  
+
+    - si esta correcto creamos una colección y los alcenamos, para ello hacemos click en los tres puntos que nos salen en la actividad al poner el ratón sobre ellas y damos click en save to collection. 
+
+    - Asignaremos un nombre a esta nueva coleccion y le damos submit 
+
+15- creacion de los endpoints (protocolos http) dinámicos.
+
+    - en la url añadimos /:id que hace referencia a la  id que le introduzcamos en el endpoint
+    - almacenamos dicha id en const favoritesId = req.params.id
+    - devolvemos el valor de la id y la concatenamos.
+
+        app.get("/favorites/:id", (req, res) => {
+            const favoritesId = req.params.id
+            console.log(favoritesId);
+            return res.send("GET FAVORITES " + favoritesId)
+        });
+
+        app.put("/favorites/:id", (req, res) => {
+            const favoritesId = req.params.id
+            console.log(favoritesId);
+            return res.send("UPDATE FAVORITES " + favoritesId)
+        });
+
+        app.post("/favorites/:id", (req, res) => {
+            const favoritesId = req.params.id
+            console.log(favoritesId);
+            return res.send("CREATE FAVORITES " + favoritesId)
+        });
+
+        app.delete("/favorites/:id", (req, res) => {
+            const favoritesId = req.params.id
+            console.log(favoritesId);
+            return res.send("DELETE FAVORITES " + favoritesId)
+        });
+        
+
+16- el servidor se detiene con CTRL + C
+
+* para interactuar con el repositorio el servidor debe estar parado
+
+
+
+
+
