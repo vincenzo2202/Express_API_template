@@ -1,0 +1,65 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "users_endpoints",
+    "dateExported": "2023-10-19T19:59:40.929Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "d191ff6d-6007-4738-b4ab-8616605c527e",
+            "colId": "99ee82c3-222d-47e2-aa86-f5821aadf1af",
+            "containerId": "",
+            "name": "localhost:4000/users",
+            "url": "localhost:4000/users",
+            "method": "DELETE",
+            "sortNum": 10000,
+            "created": "2023-10-19T19:50:49.848Z",
+            "modified": "2023-10-19T19:50:49.848Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b1c04ae0-96ef-462b-abfc-f68e6a998710",
+            "colId": "99ee82c3-222d-47e2-aa86-f5821aadf1af",
+            "containerId": "",
+            "name": "localhost:4000/users",
+            "url": "localhost:4000/users",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2023-10-19T19:50:59.049Z",
+            "modified": "2023-10-19T19:50:59.049Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a30d572f-3ce4-4ee0-83f9-0819686d8d95",
+            "colId": "99ee82c3-222d-47e2-aa86-f5821aadf1af",
+            "containerId": "",
+            "name": "localhost:4000/users",
+            "url": "localhost:4000/users",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-10-19T19:51:05.041Z",
+            "modified": "2023-10-19T19:51:05.041Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f3c6be5f-73db-47cb-9fed-dd5d8d13a1b8",
+            "colId": "99ee82c3-222d-47e2-aa86-f5821aadf1af",
+            "containerId": "",
+            "name": "localhost:4000/users",
+            "url": "localhost:4000/users",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-10-19T19:51:14.105Z",
+            "modified": "2023-10-19T19:51:14.105Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

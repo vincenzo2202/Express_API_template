@@ -80,32 +80,82 @@
     - almacenamos dicha id en const favoritesId = req.params.id
     - devolvemos el valor de la id y la concatenamos.
 
-        app.get("/favorites/:id", (req, res) => {
-            const favoritesId = req.params.id
-            console.log(favoritesId);
-            return res.send("GET FAVORITES " + favoritesId)
-        });
+       
+const getFavorites =  (req:Request, res:Response) => {
+    const favoritesId = req.params.id
+    const favoritesBodyId = req.body
+    console.log(`GET FAVORITES with the name: ${favoritesId} and with this atributes: ${favoritesBodyId.id} and ${favoritesBodyId.id}`)
+    res.send(`GET FAVORITES with the name: ${favoritesId} and with this atributes: ${favoritesBodyId.id} and ${favoritesBodyId.id}`)
+} 
+const createFavorites =  (req:Request, res:Response)=> {
+    const favoritesId = req.params.id
+    const favoritesBodyId = req.body
+    console.log(`CREATE FAVORITES with the name: ${favoritesId} and with this atributes: ${favoritesBodyId.id} and ${favoritesBodyId.id}`)
+    res.send(`CREATE FAVORITES with the name: ${favoritesId} and with this atributes: ${favoritesBodyId.id} and ${favoritesBodyId.id}`)
+}
+const updateFavorites =(req:Request, res:Response) => {
+    const favoritesId = req.params.id
+    const favoritesBodyId = req.body
+    console.log(`UPDATE FAVORITES with the name: ${favoritesId} and with this atributes: ${favoritesBodyId.id} and ${favoritesBodyId.id}`)
+    res.send(`UPDATE FAVORITES with the name: ${favoritesId} and with this atributes: ${favoritesBodyId.id} and ${favoritesBodyId.id}`)
+}
+const deleteFavorites =(req:Request, res:Response) => {
+    const favoritesId = req.params.id
+    const favoritesBodyId = req.body
+    console.log(`DELETE FAVORITES with the name: ${favoritesId} and with this atributes: ${favoritesBodyId.id} and ${favoritesBodyId.id}`)
+    res.send(`DELETE FAVORITES with the name: ${favoritesId} and with this atributes: ${favoritesBodyId.id} and ${favoritesBodyId.id}`)
+} 
 
-        app.put("/favorites/:id", (req, res) => {
-            const favoritesId = req.params.id
-            console.log(favoritesId);
-            return res.send("UPDATE FAVORITES " + favoritesId)
-        });
-
-        app.post("/favorites/:id", (req, res) => {
-            const favoritesId = req.params.id
-            console.log(favoritesId);
-            return res.send("CREATE FAVORITES " + favoritesId)
-        });
-
-        app.delete("/favorites/:id", (req, res) => {
-            const favoritesId = req.params.id
-            console.log(favoritesId);
-            return res.send("DELETE FAVORITES " + favoritesId)
-        });
         
 
-16- el servidor se detiene con CTRL + C
+16- almacenamos el puerto en una constante de nombre PORT y la alojamos en el listen.
+    const PORT = process.env.PORT || 4000 
+    app.listen( PORT, () => {
+    console.log(`Server Running ${PORT}`);
+    });
+
+17- Creamos la carpeta routes en /src donde se almacenarán las rutas.
+
+18- Creamos los archivos correspondiente a las routes.
+
+19- En el archivo usersroutes.ts importamos del fichero express a {Router} y lo almacenamos.
+
+    import { Router } from "express";
+    const usersRouter = Router();
+
+20- importamos del archivo index.ts las peticiones y sustituimos app por la constante almacenada anteriormente.
+
+    usersRouter.get("/users", (req, res) => {
+    res.send("GET USER")
+    });
+
+21- realizamos un export de lo almacenado
+    export {usersRouter}
+
+22- si queremos introducir información de entrada (req) por el body debemos recordar que llegará almacenada en forma de string, para volver a objeto en formato .Json necesitamos un middleware. 
+    app.use(express.json());
+
+23- Creamos la carpeta donde se almacenará la lógica de los endpoints, llamada controllers, donde estarán alojados los archivos.
+    userControllers.ts / favoritesControllers.ts
+    
+24- Realizamos el Import de los req y res almacenados en el fichero de express 
+
+25- Almacenamos la lógica de cada endpoint en una constante, por convención la llamaremos (getUser, createUser, updateUser, deleteUser);
+
+26- Esto lo exportamos.
+
+27- ahora lo importaremos en el archivo routes y lo introducimos en el endpoint.
+
+28- verificamos que funcione. 
+
+29- Exportamos los endpoint del thunder/postman a la carpeta http que esta contenida en src
+
+30- ejecutamos npm run build para compilarlo todo.
+
+31- ejecutamos npm run start para ponerlo en marcha en ejecución. 
+
+
+**- el servidor se detiene con CTRL + C
 
 * para interactuar con el repositorio el servidor debe estar parado
 

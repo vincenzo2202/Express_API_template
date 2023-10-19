@@ -1,54 +1,18 @@
 import express from "express";
+import { usersRouter } from "./routes/usersRoutes";
+import { usersRouterFav } from "./routes/favoritesRoutes";
 
 const app = express();
+const PORT = process.env.PORT || 4000 
+
+// Este es el middleware 
+app.use(express.json());
 
 
-//  creación de los endpoints
-app.get("/users", (req, res) => {
-    res.send("GET USER")
-});
-
-app.put("/users", (req, res) => {
-    res.send("UPDATE USER")
-});
-
-app.post("/users", (req, res) => {
-    res.send("CREATE USER")
-});
-
-app.delete("/users", (req, res) => {
-    res.send("DELETE USER")
-});
-
-
-// creacion de endpoints dinámicos 
-
-app.get("/favorites/:id", (req, res) => {
-    const favoritesId = req.params.id
-    console.log(favoritesId);
-    return res.send("GET FAVORITES " + favoritesId)
-});
-
-app.put("/favorites/:id", (req, res) => {
-    const favoritesId = req.params.id
-    console.log(favoritesId);
-    return res.send("UPDATE FAVORITES " + favoritesId)
-});
-
-app.post("/favorites/:id", (req, res) => {
-    const favoritesId = req.params.id
-    console.log(favoritesId);
-    return res.send("CREATE FAVORITES " + favoritesId)
-});
-
-app.delete("/favorites/:id", (req, res) => {
-    const favoritesId = req.params.id
-    console.log(favoritesId);
-    return res.send("DELETE FAVORITES " + favoritesId)
-});
+app.use("/", usersRouter);
+app.use("/", usersRouterFav);
 
 // encendido del servidor, puerto 4000
-
-app.listen(4000, () => {
-    console.log("Server Running");
+app.listen( PORT, () => {
+    console.log(`Server Running ${PORT}`);
 })

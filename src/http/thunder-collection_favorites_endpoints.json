@@ -1,0 +1,85 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "favorites_endpoints",
+    "dateExported": "2023-10-19T19:59:50.713Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "f1040c34-cee8-43df-bbc0-da3af1ad70ff",
+            "colId": "30e8f14d-5030-41e1-a2d2-7ff23457dbf2",
+            "containerId": "",
+            "name": "localhost:4000/favorites/1",
+            "url": "localhost:4000/favorites/1",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-10-19T19:58:59.199Z",
+            "modified": "2023-10-19T19:58:59.199Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"name\" : \"nombre\",\n\"favorites\" : \"favorites\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4f81ed6e-fbeb-4d2e-89d6-541d8706f59a",
+            "colId": "30e8f14d-5030-41e1-a2d2-7ff23457dbf2",
+            "containerId": "",
+            "name": "localhost:4000/favorites/1",
+            "url": "localhost:4000/favorites/1",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-10-19T19:59:05.945Z",
+            "modified": "2023-10-19T19:59:05.945Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"name\" : \"nombre\",\n\"favorites\" : \"favorites\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "93fd511c-a077-40bb-aeaf-665bf89576fb",
+            "colId": "30e8f14d-5030-41e1-a2d2-7ff23457dbf2",
+            "containerId": "",
+            "name": "localhost:4000/favorites/1",
+            "url": "localhost:4000/favorites/1",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2023-10-19T19:59:12.329Z",
+            "modified": "2023-10-19T19:59:12.329Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"name\" : \"nombre\",\n\"favorites\" : \"favorites\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6dd6969f-a721-454a-83e6-3d9fbdfd7bc6",
+            "colId": "30e8f14d-5030-41e1-a2d2-7ff23457dbf2",
+            "containerId": "",
+            "name": "localhost:4000/favorites/1",
+            "url": "localhost:4000/favorites/1",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-10-19T19:59:16.561Z",
+            "modified": "2023-10-19T19:59:16.561Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"name\" : \"nombre\",\n\"favorites\" : \"favorites\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
