@@ -47,7 +47,6 @@ app.delete("/favorites/:id", (req, res) => {
     return res.send("DELETE FAVORITES " + favoritesId)
 });
 
-
 // encendido del servidor, puerto 4000
 
 app.listen(4000, () => {

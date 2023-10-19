@@ -37,6 +37,7 @@
 
     -"build": "tsc",
     -"dev": "nodemon ./src/index.ts"
+    "start": "node ./dir/index.js"
 
  para ejecutarlos en la terminal segun convenga.
     - npm run build
